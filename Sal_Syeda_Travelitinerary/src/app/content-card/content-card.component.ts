@@ -55,7 +55,7 @@ export class ContentCardComponent {
       title: 'Rome Adventure',
       description: 'Immerse yourself in the rich history of Rome, with its ancient ruins, Vatican City, and delicious Italian cuisine.',
       creator: 'Sal Syeda',
-      imgUrl: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fca.hotels.com%2Fgo%2Fitaly%2Fbest-things-to-do-rome&psig=AOvVaw0vZZn_fPN28D0a7Gj1AmFR&ust=1705878820037000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNCUmv2L7YMDFQAAAAAdAAAAABAD',
+      imgUrl: 'https://ca.hotels.com/go/italy/colosseum-rome?intlid=gglist|listitem:image',
       type: 'History',
       tags: ['Rome', 'travel']
     });

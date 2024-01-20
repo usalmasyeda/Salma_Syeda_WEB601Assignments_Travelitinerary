@@ -23,9 +23,9 @@ class ContentList {
       // console.log("Title:" + conItem.title);
       // console.log("Description:" + conItem.description);
       // console.log("Creator:" + conItem.creator);
-      // console.log("Image URL:" + conItem.imgUrl);
+      // console.log("ImageURL:" + conItem.imgUrl);
       // console.log("Type:" + conItem.type);
-      return `<div
+      return `<div>
       <h2>${conItem.title}</h2>
       <p>Description: ${conItem.description}</p>
       <p>Creator: ${conItem.creator}</p>

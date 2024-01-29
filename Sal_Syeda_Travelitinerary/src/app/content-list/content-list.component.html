@@ -1,1 +1,6 @@
-<p>content-list works!</p>
+<!-- content-list.component.html -->
+<div *ngFor="let contentItem of contentList; let i = index" class="content-card card-{{i + 1}}">
+  <app-content-card
+    [content]="contentItem"
+  ></app-content-card>
+</div>

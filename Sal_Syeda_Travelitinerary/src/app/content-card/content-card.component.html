@@ -18,27 +18,16 @@
   </style>
 </head>
 <body>
-
-  <h2 class="text-center mt-3">Travel Itinerary</h2>
-
-  <div class="card-container mx-auto mt-4">
-    <div *ngFor="let item of contentList.items; let i = index" class="card mb-4">
-      <div class="container">
-        <div class="row align-items-start">
-          <div class="col-md-4">
-            <img src="{{ item.imgUrl }}" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-md-8">
-            <h3>Title: {{ item.title }}</h3>
-            <p>Description: {{ item.description }}</p>
-            <p>Creator: {{ item.creator }}</p>
-            <p>Type: {{ item.type || 'N/A' }}</p>
-            <p>Tags: {{ item.tags || 'N/A' }}</p>
-          </div>
-        </div>
-      </div>
+    <!-- content-card.component.html -->
+    <div class="content-card" (click)="displayContentInfo()">
+      <h2>{{ content.title }}</h2>
+      <img *ngIf="content.imgUrl" src="{{ content.imgUrl }}" alt="{{ content.title }}">
+      <p *ngIf="content.description">Description: {{ content.description }}</p>
+      <p *ngIf="content.creator">Creator: {{ content.creator }}</p>
+      <p *ngIf="content.type">Type: {{ content.type }}</p>
+      <p *ngIf="content.tags && content.tags.length > 0">Tags: {{ content.tags.join(', ') }}</p>
     </div>
-  </div>
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

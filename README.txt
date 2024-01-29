@@ -19,3 +19,15 @@ Steps for Assignemnt 1:
 -> Added content in the content-card.ts, .html and .css files
 -> Add component in the actual app .html for it to display the content
 -> To run the application we used the command (ng serve)
+
+
+Steps for Assignment 2: 
+
+-> Deleted ContentList class implementation for the Content-card
+-> Deleted content-list.ts helper file.
+-> Created a new component called Content-list
+-> In the Content-list componenet, Defined an array of 5 content item's.
+-> Used an ngFor directive in Content-list's html file
+-> Displayed 5 content cards by passing in the values from the content array
+-> Made the required css changes for the content array
+-> Display works 

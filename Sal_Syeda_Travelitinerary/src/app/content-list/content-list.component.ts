@@ -54,6 +54,24 @@ export class ContentListComponent implements OnInit{
     imgUrl: '',
     type: '', // Bonus
     tags: []
+  },
+  {
+    id: 6,
+    title: 'Bora Bora Paradise',
+    description: 'Experience the ultimate tropical getaway in Bora Bora, with overwater bungalows and crystal-clear blue waters.',
+    creator: 'Sal Syeda',
+    imgUrl: 'https://cdn.voyagerguru.com/wp-content/uploads/2022/04/20220227_PYF_Le-Bora-Bora_203.jpg',
+    type: 'image',
+    tags: ['Bora Bora', 'travel']
+  },
+  {
+    id: 7,
+    title: 'Marrakech Adventure',
+    description: 'Immerse yourself in the vibrant colors and spices of Marrakech, Morocco, exploring its bustling markets and historic palaces.',
+    creator: 'Sal Syeda',
+    imgUrl: 'https://lp-cms-production.imgix.net/2022-12/GettyImages-1124472714.jpeg?w=600&h=400',
+    type: 'image',
+    tags: ['Marrakech', 'travel']
   }
 ];
 

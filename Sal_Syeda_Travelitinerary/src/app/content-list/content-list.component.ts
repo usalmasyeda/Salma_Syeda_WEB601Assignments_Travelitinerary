@@ -62,7 +62,7 @@ export class ContentListComponent implements OnInit{
     creator: 'Sal Syeda',
     imgUrl: 'https://cdn.voyagerguru.com/wp-content/uploads/2022/04/20220227_PYF_Le-Bora-Bora_203.jpg',
     type: 'image',
-    tags: ['Bora Bora', 'travel']
+    tags: ['travel']
   },
   {
     id: 7,

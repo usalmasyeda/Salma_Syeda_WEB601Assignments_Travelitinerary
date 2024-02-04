@@ -41,7 +41,7 @@ export class ContentListComponent implements OnInit{
     creator: 'Sal Syeda',
     imgUrl: 'https://www.travelandleisure.com/thmb/91pb8LbDAUwUN_11wATYjx5oF8Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/new-york-city-evening-NYCTG0221-52492d6ccab44f328a1c89f41ac02aea.jpg',
     type: 'Fashion',
-    tags: ['New York', 'travel']
+    tags: []
   };
 
   contentItem3 = {

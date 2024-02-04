@@ -1,6 +1,33 @@
 <!-- content-list.component.html -->
-<div *ngFor="let contentItem of contentList; let i = index" class="content-card card-{{i + 1}}">
-  <app-content-card
+<!-- <div *ngFor="let contentItem of contentList; let i = index" class="content-card card-{{i + 1}}">
+  <app-content-card *ngFor="let item of (content | contentTagged)"
     [content]="contentItem"
   ></app-content-card>
+</div> -->
+
+<!-- content-list.component.html -->
+
+<!-- Input field and search button -->
+<input [(ngModel)]="search" placeholder="Enter title">
+<button (click)="searchByTitle()">Search</button>
+
+<!-- Display search result message -->
+<p [style.color]="searchResultColor">{{ searchResultMessage }}</p>
+
+<!-- Display content cards -->
+<div *ngFor="let item of contentList" [ngClass]="{'selected-content': item === selectedContent}">
+  <app-content-card [content]="item"></app-content-card>
 </div>
+
+
+<!-- Display content with no type -->
+<h2>Content with No Type</h2>
+<app-content-card *ngFor="let item of contentList | contentTagged:''" [content]="item"></app-content-card>
+
+<!-- Display content with type 'Type1' -->
+<h2>Content with Type 'Type1'</h2>
+<app-content-card *ngFor="let item of contentList | contentTagged:'Type1'"[content]="item"></app-content-card>
+
+<!-- Display content with type 'Type2' -->
+<h2>Content with Type 'Type2'</h2>
+<app-content-card *ngFor="let item of contentList | contentTagged:'Type2'" [content]="item"></app-content-card>

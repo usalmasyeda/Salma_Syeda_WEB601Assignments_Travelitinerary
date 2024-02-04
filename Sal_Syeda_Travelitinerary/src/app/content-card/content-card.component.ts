@@ -8,7 +8,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent {
-  @Input() content!: Content;
+  @Input() content!: any;
 
   constructor() {}
 

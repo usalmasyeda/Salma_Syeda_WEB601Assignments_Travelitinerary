@@ -4,9 +4,24 @@ import { Content } from '../helper-files/content-interface';
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
-  styleUrl: './content-list.component.scss'
+  styleUrls: ['./content-list.component.scss'] // Corrected property name
 })
-export class ContentListComponent implements OnInit{
+export class ContentListComponent implements OnInit {
+  ngOnInit(): void {
+    this.contentList = [
+      this.contentItem,
+      this.contentItem1,
+      this.contentItem2,
+      this.contentItem3,
+      this.contentItem4,
+      this.contentItem5,
+      this.contentItem6
+    ];
+
+    // Initialize isSelected property for each content item
+    this.contentList.forEach(item => item.isSelected = false);
+  }
+
   search: string = '';
   contentList: Content[] = [];
   searchResultMessage: string = ''; // Message to display search result
@@ -70,7 +85,7 @@ export class ContentListComponent implements OnInit{
     description: 'Experience the ultimate tropical getaway in Bora Bora, with overwater bungalows and crystal-clear blue waters.',
     creator: 'Sal Syeda',
     imgUrl: 'https://cdn.voyagerguru.com/wp-content/uploads/2022/04/20220227_PYF_Le-Bora-Bora_203.jpg',
-    type: 'image',
+    type: 'travel',
     tags: ['travel']
   };
 
@@ -80,22 +95,11 @@ export class ContentListComponent implements OnInit{
     description: 'Immerse yourself in the vibrant colors and spices of Marrakech, Morocco, exploring its bustling markets and historic palaces.',
     creator: 'Sal Syeda',
     imgUrl: 'https://lp-cms-production.imgix.net/2022-12/GettyImages-1124472714.jpeg?w=600&h=400',
-    type: 'image',
+    type: 'food',
     tags: ['Marrakech', 'travel']
   };
 
 
-  ngOnInit(): void {
-    this.contentList = [
-      this.contentItem,
-      this.contentItem1,
-      this.contentItem2,
-      this.contentItem3,
-      this.contentItem4,
-      this.contentItem5,
-      this.contentItem6
-    ];
-  }
 
   searchByTitle(): void {
     const foundItem = this.contentList.find(item => item.title.toLowerCase() === this.search.toLowerCase());
@@ -103,6 +107,13 @@ export class ContentListComponent implements OnInit{
     if (foundItem) {
       this.searchResultMessage = `Content item with title '${this.search}' exists.`;
       this.searchResultColor = 'green';
+
+      // Check if isSelected property exists before setting it
+      if ('isSelected' in foundItem) {
+        foundItem.isSelected = true;
+      } else {
+        console.error('isSelected property is not defined on the found item.');
+      }
     } else {
       this.searchResultMessage = `No content item found with title '${this.search}'.`;
       this.searchResultColor = 'red';

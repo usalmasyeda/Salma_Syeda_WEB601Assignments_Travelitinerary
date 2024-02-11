@@ -1,4 +1,5 @@
 export interface Content {
+  isSelected?: boolean;
   id: number;
   title: string;
   description: string;

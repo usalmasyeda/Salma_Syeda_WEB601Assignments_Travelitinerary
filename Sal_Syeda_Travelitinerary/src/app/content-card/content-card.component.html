@@ -20,7 +20,7 @@
 <body>
 
     <!-- content-card.component.html -->
-    <div class="content-card" [ngClass] = "{.'selected' : content.isSelected }" (click) = "displayContentInfo()">
+    <div class="content-card">
     <h2>{{ content.title }}</h2>
     <img *ngIf="content.imgUrl" src="{{ content.imgUrl }}" alt="{{ content.title }}">
       <p *ngIf="content.description">Description: {{ content.description }}</p>

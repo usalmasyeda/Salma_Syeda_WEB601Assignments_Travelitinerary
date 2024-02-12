@@ -4,7 +4,7 @@ import { Content } from '../helper-files/content-interface';
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
-  styleUrls: ['./content-list.component.scss'] // Corrected property name
+  styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class ContentListComponent implements OnInit {
   selectedContent: Content | null = null; // Track the selected content item
 
 
-  contentItem = {
+  contentItem: Content = {
     id: 1,
     title: 'Paris Adventure',
     description: 'Explore the romantic city of Paris, known for its iconic landmarks such as the Eiffel Tower and Louvre Museum.',
@@ -39,7 +39,7 @@ export class ContentListComponent implements OnInit {
     tags: ['Paris', 'travel']
   };
 
-   contentItem1 = {
+  contentItem1: Content = {
     id: 2,
     title: 'Tokyo Escapade',
     description: 'Experience the vibrant culture of Tokyo, from traditional temples to modern tech districts like Akihabara.',
@@ -49,7 +49,7 @@ export class ContentListComponent implements OnInit {
     tags: ['Tokyo', 'travel']
   };
 
-  contentItem2 = {
+  contentItem2: Content = {
     id: 3,
     title: 'New York City Exploration',
     description: 'Discover the city that never sleeps, with its iconic skyline, Broadway shows, and Central Park.',
@@ -59,7 +59,7 @@ export class ContentListComponent implements OnInit {
     tags: []
   };
 
-  contentItem3 = {
+  contentItem3: Content = {
     id: 4,
     title: 'Santorini Getaway',
     description: 'Escape to the beautiful Greek island of Santorini, known for its stunning sunsets and white-washed buildings.',
@@ -69,17 +69,16 @@ export class ContentListComponent implements OnInit {
     tags: ['Santorini', 'travel']
   };
 
-  contentItem4 = {
+  contentItem4: Content = {
     id: 5,
     title: 'Rome Adventure',
     description: 'Immerse yourself in the rich history of Rome, with its ancient ruins, Vatican City, and delicious Italian cuisine.',
     creator: 'Sal Syeda',
-    imgUrl: '',
     type: '', // Bonus
     tags: []
   };
 
-  contentItem5 = {
+  contentItem5: Content = {
     id: 6,
     title: 'Bora Bora Paradise',
     description: 'Experience the ultimate tropical getaway in Bora Bora, with overwater bungalows and crystal-clear blue waters.',
@@ -89,7 +88,7 @@ export class ContentListComponent implements OnInit {
     tags: ['travel']
   };
 
-  contentItem6 = {
+  contentItem6: Content = {
     id: 7,
     title: 'Marrakech Adventure',
     description: 'Immerse yourself in the vibrant colors and spices of Marrakech, Morocco, exploring its bustling markets and historic palaces.',
@@ -98,8 +97,6 @@ export class ContentListComponent implements OnInit {
     type: 'food',
     tags: ['Marrakech', 'travel']
   };
-
-
 
   searchByTitle(): void {
     const foundItem = this.contentList.find(item => item.title.toLowerCase() === this.search.toLowerCase());

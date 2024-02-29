@@ -24,7 +24,7 @@
       <h2>{{ content.title }}</h2>
       <img *ngIf="content.imgUrl; else defaultImage" [src]="content.imgUrl" alt="{{ content.title }}">
       <ng-template #defaultImage>
-        <img src="default-image.jpg" alt="Default Image">
+        <img src="https://cdn.vectorstock.com/i/preview-1x/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg" alt="Default Image">
       </ng-template>
       <p *ngIf="content.description">Description: {{ content.description }}</p>
       <p *ngIf="content.creator">Creator: {{ content.creator }}</p>

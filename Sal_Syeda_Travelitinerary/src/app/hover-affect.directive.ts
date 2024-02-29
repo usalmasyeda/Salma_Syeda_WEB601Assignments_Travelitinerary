@@ -4,7 +4,7 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
   selector: '[appHoverAffect]'
 })
 export class HoverAffectDirective {
-  @Input() affectStyle!: string;
+  @Input() affectStyle: string;
 
   private originalBorder: string;
 

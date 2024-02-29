@@ -14,13 +14,14 @@
       width: 50%;
       height: auto;
       padding: 10px;
+      place-content: center;
     }
   </style>
 </head>
 <body>
 
-    <!-- content-card.component.html -->
-    <div class="content-card">
+     <!-- content-card.component.html -->
+     <div class="content-card" appHoverAffect="border">
       <h2>{{ content.title }}</h2>
       <img *ngIf="content.imgUrl; else defaultImage" [src]="content.imgUrl" alt="{{ content.title }}">
       <ng-template #defaultImage>
@@ -28,10 +29,11 @@
       </ng-template>
       <p *ngIf="content.description">Description: {{ content.description }}</p>
       <p *ngIf="content.creator">Creator: {{ content.creator }}</p>
-      <p *ngIf="content.type" appHoverAffect [affectStyle]="'border'">Type: {{ content.type }}</p>
-      <p *ngFor="let tag of content.tags" appHoverAffect [affectStyle]="'bold'">{{ tag }}</p>
+      <p *ngIf="content.type" appHoverAffect="underline">Type: {{ content.type }}</p>
+      <p *ngIf="content.tags && content.tags.length > 0">Tags:
+        <span *ngFor="let tag of content.tags" appHoverAffect="bold border">{{ tag }}</span>
+      </p>
     </div>
-
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

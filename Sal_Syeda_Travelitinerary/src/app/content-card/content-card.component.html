@@ -20,17 +20,20 @@
 <body>
 
     <!-- content-card.component.html -->
-    <div class="content-card">
-      <h2>{{ content.title }}</h2>
-      <img *ngIf="content.imgUrl; else defaultImage" [src]="content.imgUrl" alt="{{ content.title }}">
-      <ng-template #defaultImage>
-        <img src="https://cdn.vectorstock.com/i/preview-1x/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg" alt="Default Image">
-      </ng-template>
-      <p *ngIf="content.description">Description: {{ content.description }}</p>
-      <p *ngIf="content.creator">Creator: {{ content.creator }}</p>
-      <p *ngIf="content.type" appHoverAffect [affectStyle]="'border'">Type: {{ content.type }}</p>
-      <p *ngFor="let tag of content.tags" appHoverAffect [affectStyle]="'bold'">{{ tag }}</p>
-    </div>
+    <!-- ngFor is used as a for loop to display the content while first-card gets the value of the content-card at the position of 0
+ We used click event for displaying the info-->
+<div class="content-card" appHoverAffect="border">
+  <h2>{{ content.title }}</h2>
+  <img *ngIf="content.imgUrl; else defaultImage" class="images" [src]="content.imgUrl" alt="{{ content.title }}">
+  <ng-template #defaultImage>
+    <img src="https://static.thenounproject.com/png/4974686-200.png" class="images" alt="Default Image" />
+  </ng-template>
+  <p *ngIf="content.type" appHoverAffect="underline">Type: {{ content.type }}</p>
+  <p *ngIf="content.tags && content.tags.length > 0">
+    Tags:
+    <span *ngFor="let tag of content.tags" appHoverAffect="bold border">{{ tag }}</span>
+  </p>
+</div>
 
 
 

@@ -15,4 +15,16 @@ export class ContentCardComponent {
   displayContentInfo() {
     console.log(`Clicked on Content ID: ${this.content.id}, Title: ${this.content.title}`);
   }
+  getCardStyles(): { [key: string]: string } {
+    switch (this.content.type) {
+      case 'Proposal':
+        return { 'border-left': '5px solid #4CAF50' };
+      case 'Anime':
+        return { 'border-left': '5px solid #2196F3' };
+      case 'Fashion':
+        return { 'border-left': '5px solid #FFC107' };
+      default:
+        return {};
+    }
+  }
 }

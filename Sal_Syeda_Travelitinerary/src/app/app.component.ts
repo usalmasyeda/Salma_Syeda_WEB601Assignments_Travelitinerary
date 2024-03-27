@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TravelService } from './travel.service';
 import { contentItem } from './helper-files/contentDb';
+import { TravelService } from './travel.service';
 
 @Component({
   selector: 'app-root',
